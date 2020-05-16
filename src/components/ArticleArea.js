@@ -15,7 +15,7 @@ export default function ArticleArea() {
   const useStyles = makeStyles(theme => ({
 		root: {
 			maxHeight: "80vh",
-			
+
 			overflow: "auto"
 		},
 		skeleton: {
@@ -24,7 +24,7 @@ export default function ArticleArea() {
 		},
 
   }));
-  const info = useArticleBoardInfoContext(); 
+  const info = useArticleBoardInfoContext();
   const classes = useStyles();
 
   const handleChangeIndex = (i) =>{
@@ -36,7 +36,7 @@ export default function ArticleArea() {
       <ArticleSearch/>
       <ArticleDisplay/>
     </SwipeableViews>
-    
+
   );
-    
+
 }

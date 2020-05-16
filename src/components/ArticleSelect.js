@@ -97,9 +97,9 @@ export default function ArticleSelect(props) {
 	const [isArticleSearchFormOpen, setIsArticleSearchFormOpen] = useState(
 		false
 	);
-	
+
 	const [articleItems, setArticleItems] = useState([]);
-	
+
 	const { setIsSnackbarOpen, setSnackbarContent } = useProgressContext();
 
 	useEffect(() => {
@@ -112,7 +112,7 @@ export default function ArticleSelect(props) {
 		}
 	}, [info]);
 
-	
+
 	const toggleSearchForm = () => {
 		setIsArticleSearchFormOpen(
 			isArticleSearchFormOpen => !isArticleSearchFormOpen
@@ -287,7 +287,7 @@ export default function ArticleSelect(props) {
 					<Fab color="secondary" className={classes.searchFab}>
 						<SearchIcon onClick={toggleSearchForm} />
 					</Fab>
-					
+
 					{/* general list: not search */}
 					<InfiniteScroll
 						style={{ overflow: "inherit" }}
