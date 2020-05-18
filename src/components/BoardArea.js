@@ -13,17 +13,14 @@ export default function BoardArea() {
 			borderRight: `1px solid ${theme.palette.divider}`,
 			justifyContent: "center",
 			alignItems: "center",
-			maxHeight: "90vh",
-			height: "90vh",
+			height:"95vh",
 			overflow: "auto"
-		}
+		},
 	}));
 	const classes = useStyles();
 	const [selectedBoard, setSelectedBoard] = useState("hot");
 	const [searchBoardText, setSearchBoardText] = useState("");
 	return (
-		
-
 		<Grid container component="main" className={classes.root}>
 			<BoardSelect setSelectedBoard = {setSelectedBoard} setSearchBoardText={setSearchBoardText}/>
 			<BoardDisplay selectedBoard={selectedBoard} searchBoardText={searchBoardText} />

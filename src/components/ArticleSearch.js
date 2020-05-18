@@ -18,9 +18,8 @@ export default function ArticleSearch(props) {
 		root: {
 			alignItems: "center",
 			justifyContent: "center",
-			maxHeight: "90vh",
-			height: "90vh",
-			overflow: "auto"
+			overflow: "auto",
+			height: "95vh",
 		},
 		skeleton: {
 			fontSize: "40px",
@@ -117,10 +116,15 @@ export default function ArticleSearch(props) {
 					<IconButton
 						onClick={async (e) => {
 							// force bot to get back to index page
+							let t1 = performance.now();
 							await BotContext.executeCommand({ type: "index" });
+							let t2 = performance.now();
+							console.log('go to index',t2-t1)
 							info.setIndex(0);
                             info.setArticleSearchList([]);
-                            info.setCriteria({});
+							info.setCriteria({});
+							let t3 = performance.now();
+							console.log('search to select',t3-t2)
 						}}
 						className={classes.goback}
 					>

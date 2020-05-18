@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Skeleton from "react-loading-skeleton";
+import Skeleton from '@material-ui/lab/Skeleton';
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { useBotContext } from "./BotContext";
@@ -19,7 +19,9 @@ export default function BoardSelect(props) {
 		root: {
 			justifyContent: "center",
 			alignItems: "center",
-			
+			borderBottom : `1px solid ${theme.palette.divider}`,
+			minHeight:'10vh',
+			alignSelf: 'start',
 		},
 		select: {
 			display: "flex",
@@ -79,7 +81,8 @@ export default function BoardSelect(props) {
 	return (
 		<Grid container component="main" className={classes.root}>
 			<Grid item className={classes.skeleton}>
-				{!BotContext.botState.login && <Skeleton count={1} />}
+				{!BotContext.botState.login && <Skeleton />}
+				
 			</Grid>
 			{BotContext.botState.login && (
 				<Grid item className={classes.select}>
